@@ -63,4 +63,62 @@ Window {
             cmpClicked();
         }
     }
+
+    Button {
+        id: button
+        x: 510
+        y: 32
+        width: 55
+        height: 22
+        color: "#73d216"
+        label: "save"
+
+        onButtonClick: {
+            textFieldFileWorker.saveToFile("text_field1_value.txt", textInput.text);
+        }
+    }
+
+    Button {
+        id: button1
+        x: 510
+        y: 119
+        width: 55
+        height: 22
+        color: "#edd400"
+        label: "open"
+
+        onButtonClick: {
+            let savedToFile = textFieldFileWorker.openFromFile("text_field1_value.txt");
+            textInput.text = savedToFile;
+        }
+    }
+
+    Button {
+        id: button2
+        x: 510
+        y: 169
+        width: 55
+        height: 22
+        color: "#73d216"
+        label: "save"
+
+        onButtonClick: {
+            textFieldFileWorker.saveToFile("text_field2_value.txt", textInput1.text);
+        }
+    }
+
+    Button {
+        id: button3
+        x: 510
+        y: 276
+        width: 55
+        height: 22
+        color: "#edd400"
+        label: "open"
+
+        onButtonClick: {
+            let savedToFile = textFieldFileWorker.openFromFile("text_field2_value.txt");
+            textInput1.text = savedToFile;
+        }
+    }
 }
